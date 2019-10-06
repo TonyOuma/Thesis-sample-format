@@ -1,0 +1,58 @@
+\documentclass[12pt,twoside]{report}
+\usepackage{graphicx}
+\graphicspath{{}}
+\usepackage[a4paper,width=150mm, bottom=25mm, bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{Thesis Title}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\fancyfoot[CO,RE]{Ouma T.}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{
+	{Thesis Title}\\
+	{\large Technical University of Mombasa}	
+}
+\author{Ouma T. Omondi}
+\date{\today}
+\begin{document}
+
+
+\maketitle
+
+\chapter*{Abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\chapter*{Dedication}
+To mum and dad
+
+\chapter*{Declaration}
+I declare that...
+
+\chapter*{Acknowledgements}
+I want to thank...
+
+\tableofcontents
+
+\chapter{Introduction}
+\input{intoduction}
+\chapter{Chapter Two Title}
+\input{chapter02}
+\chapter{Chapter Three Title}
+\input{chapter03}
+\chapter{Chapter Four Title}
+\input{chapter04}
+\chapter{Conclusion}
+\input{conclusion}
+
+\appendix
+\chapter{Appendix Title}
+\input{appendix}
+
+
+
+\end{document}
