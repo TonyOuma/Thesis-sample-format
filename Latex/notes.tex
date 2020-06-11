@@ -1,0 +1,161 @@
+
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2606}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Mon Mar 01 11:03:52 2004}
+%TCIDATA{LastRevised=Monday, December 12, 2011 11:22:53}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+
+\nofiles
+\topmargin=-0.5in
+\textheight=9.0in
+\textwidth=6.5in
+\oddsidemargin=0.0in
+\pagestyle{empty}
+\mathsurround=1pt   \parindent=0pt
+\renewcommand{\baselinestretch}{1.3}
+\def\DS#1{$\displaystyle{#1}$}
+\renewcommand{\baselinestretch}{1.4}
+\topmargin=-0.5 in
+\textheight=10in
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm} 
+\usepackage{physics}
+\newtheorem{theorem}{\bf{Theorem}}[section]
+\newtheorem{lemma}{\bf{Lemma}}[section]
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\numberwithin{equation}{section}
+
+\def \ben{\begin{eqnarray*}}
+\def \een{\end{eqnarray*}}
+\def \bea{\begin{eqnarray}}
+\def \eea{\end{eqnarray}}
+\def \cp{\Cal P}
+\def \L {\mbox{\boldmath $L$}} \def \G {\mbox{\boldmath $G$}}
+\def \Y {\mbox{\boldmath $Y$}} \def \H {\mbox{\boldmath $H$}}
+\def \W {\mbox{\boldmath $W$}} \def \M {\mbox{\boldmath $M$}}  \def \I
+{\mbox{\boldmath $I$}}
+\def \J {\mbox{\boldmath $J$}} \def \D {\mbox{\boldmath $D$}}
+\def \K {\mbox{\boldmath $K$}} \def \Q {\mbox{\boldmath $Q$}}
+\def \R {\mbox{\boldmath $R$}} \def \O {\mbox{\boldmath $O$}}
+\def \e {\mbox{\boldmath $e$}}
+\def \x {\mbox{\boldmath $x$}} \def \y {\mbox{\boldmath $y$}} \def \z
+{\mbox{\boldmath $z$}}
+\def \u {\mbox{\boldmath $u$}} \def \m {\mbox{\boldmath $m$}}
+\def \F {{\cal F}}
+
+\begin{document}
+
+
+\centerline{\bf J Chen Lecture Notes} 
+\section{General Linear Model}
+We will study inference problem for GLM into the chapter.
+\begin{definition}{General Linear Model(GLM)}
+
+\end{definition}
+Let $Y$ be an $nx1$ observable random vector, $X$ be an $n$x$p$ matrix $(n>p)$ of known fixed numbers. $\beta$ be a $p$x$1$ vector of unknown parameter; $\epsilon$ be an $n$x$1$ unobservable random (error) vector with $E(\epsilon)=0$ and $Cov(\epsilon) = \Sigma$; and let those quantities be related by:
+\begin{eqnarray}
+Y = x\beta + \epsilon
+\end{eqnarray}
+These specification define a GLM
+
+We will discuss estimation and hypothesis testing mostly for Case 1 and estimate Case 2 in the following sections of this chapter.
+
+\section{Point Estimation of $\alpha^{2}$ and Linear Function of $\beta$: Case 1}
+\begin{theorem}
+Let $Y = x\beta + \epsilon$ as specified in Defn 1.1.1\\
+Assume $\epsilon \sim N_{n}(0,\alpha^{2}1)$ Then the following results follow:
+\item[1.] ${\beta} = X'{Y}$ is the MLE for ${\beta}$ where $X' = (X'X)^{-1}X'$
+\item[2.] $\alpha^{2} = \dfrac{1}{n-p}Y'(1-K){Y}$ is the MLE for $\alpha^{2}$, where $K = X(X'X)^{-1}X' = XX'$ 
+\item[3]  ${\beta} \sim N_{10}({\beta},\alpha^{2}C)$, where $C =\big( X'X\big)^{-1}$
+\item[4] $(n-p){\alpha}^{2}/\alpha^{2} = U \sim X_{n-p}^{2}$
+\item[5] ${\beta}$ and ${\alpha}$ are independent
+\item[6] ${\beta}$ and ${\alpha}$ are sufficient statistics for ${\beta}$ and $\alpha^{2}$
+\item[7] ${\beta}$ and ${\alpha}$ are complete statistics
+
+\textbf{Proof:}  $\epsilon \sim N_{n}{0},\alpha^{2}1) \Longrightarrow {Y} \sim N_{n}(x{\beta},\alpha^{2}1)$ \\
+$\Longrightarrow$ The likelihood function is:
+\begin{eqnarray*}
+L({\beta}, \alpha^{2}| {Y}) = \Big(\dfrac{1}{\sqrt{2\pi\alpha^{2}}}\Big)^{n}e^{-\dfrac{1}{2\alpha^{2}}({y}-x{\beta})'({y}-x{\beta})}
+\end{eqnarray*}
+\begin{eqnarray*}
+\Longrightarrow \ln L({\beta}, \alpha^{2}) = -\dfrac{n}{2}\ln 2\pi - \dfrac{n}{2}\alpha^{2}- \dfrac{1}{2\alpha^{2}}({y}-x{\beta})'({y}-x{\beta})
+\end{eqnarray*}
+where the parameter space is:
+\begin{eqnarray*}
+\omega = {({\beta}, \alpha^{2}); \alpha^{2} > 0, -\infty < \beta_{i} < \infty, i = 1, ... p}
+\end{eqnarray*}
+\begin{eqnarray*}
+\dfrac{\partial \ln L({\beta}, \alpha^{2})}{\partial {\beta}} = + \dfrac{2}{\alpha^{2}}X'({y}-X{\beta}) = \dfrac{1}{\alpha^{2}}(X'{y} - X'X{\beta}) = 0
+\end{eqnarray*}
+\begin{eqnarray*}
+\dfrac{\partial \ln L({\beta}, \alpha^{2})}{\partial {\beta}} = - \dfrac{n}{2\alpha^{2}}X'({y}-X{\beta}) =\dfrac{1}{2\alpha^{4}}({y} - X'{\beta}) = 0
+\end{eqnarray*}
+\begin{eqnarray*}
+\Longrightarrow \Big\{_{(y-x\beta)'(y-x\beta)-n\alpha^{2} = 0}^{x'y-X'X\beta = 0} "normal equations"
+\end{eqnarray*}
+\begin{eqnarray*}
+\Longrightarrow \bigg\{_{(\alpha^{2} = \dfrac{1}{n}(y-X\beta)'(y-x\beta)}^{X'X\beta = X'y} "are solutions"
+\end{eqnarray*}
+for the above normal equations.\\As X has rank P, $X'X$ is of full rank. That is $(X'X)^{-1}$ exists. Then the MLEs are obtained as:
+\begin{eqnarray*}
+\hat{\beta} = (X'X)^{-1}X'\underline{y} = X-\underline{Y}
+\end{eqnarray*}
+\begin{eqnarray*}
+\hat{\alpha}^{2} = \dfrac{1}{n}(\underline{y}-X(X'X)^{-1}X'\underline{y})'(\underline{y}-X(X'X)^{-1}X'\underline{y})
+\end{eqnarray*}
+\begin{eqnarray*}
+= \dfrac{1}{n}\underline{y'} \big[I-X(X'X)^{-1}X'\big] \big[I-X(X'X)^{-1}X'\big]\underline{y}
+\end{eqnarray*}
+\begin{eqnarray*}
+= \dfrac{1}{n}\underline{y'} \big[I-X(X'X)^{-1}X'\big]\underline{y}
+\end{eqnarray*}
+where $X = (X'X)^{-1}X'$
+\begin{eqnarray*}
+\Longrightarrow \hat{\beta} = X'\underline{Y} is the MLE of \underline{\beta} \hspace{1cm}is proved
+\end{eqnarray*}
+also
+\begin{eqnarray*}
+\Longrightarrow \hat{\beta} = X'\underline{Y} is the MLE of \underline{\beta} \hspace{1cm}(1) is proved
+\end{eqnarray*}
+$\hat{\alpha}^{2}= \dfrac{1}{n}\underline{y'} \big[I-X(X'X)^{-1}X'\big]\underline{y} $
+is a function(a constant multiple) of the MLE of
+$\hat{\alpha}^{2}$ (2) is proved\\
+AS $\hat{\beta} = X'\underline{y} = (X'X)^{-1}X'\underline{y}$ is a linear form of y.
+\begin{eqnarray*}
+\Longrightarrow \underline{\beta} \sim N_{p}\big[(X'X)^{-1}X\beta, \alpha^{2}(X'X)^{-1}X'X(X'X)^{-1}\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= N_{p}(\beta, \alpha^{2}(X'X)^{-1}) = N_{p}(\beta, \alpha^{2}C), C = (X'X)^{-1}
+\end{eqnarray*}
+$\Longrightarrow$ (3) is proved\\
+As $U = \dfrac{(n-p)\hat{\alpha}^{2}}{\alpha^{2}} = \dfrac{1}{\alpha}\underline{y'}\big[I-X(X'X)^{-1}X'\big]\underline{y}$ is a quadratic function of \underline{y} with \\$\underline{y} \sim N_{p}(\beta, \alpha^{2}I)$ and $A = \big[I - X(X'X)^{-1}X'\big]\dfrac{1}{\alpha^{2}}$
+Now,
+\begin{eqnarray*}
+A\sum = \dfrac{1}{\alpha^{2}}\big[I-X(X'X)^{-1}X'\big]^{2}I = I - X(X'X)^{-1}X'
+\end{eqnarray*}
+\begin{eqnarray*}
+ = \big[I-X(X'X)^{-1}X'\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+A\sum A\sum  = \big[I-X(X'X)^{-1}X'\big]\big[I-X(X'X)^{-1}X'\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= I-X(X'X)^{-1}X'-X(X'X)^{-1}X' + X(X'X)^{-1}X'X
+\end{eqnarray*}
+\end{theorem}
+
+
+
+\end{document}
