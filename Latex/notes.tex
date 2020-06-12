@@ -143,19 +143,102 @@ $\Longrightarrow$ (3) is proved\\
 As $U = \dfrac{(n-p)\hat{\alpha}^{2}}{\alpha^{2}} = \dfrac{1}{\alpha}\underline{y'}\big[I-X(X'X)^{-1}X'\big]\underline{y}$ is a quadratic function of \underline{y} with \\$\underline{y} \sim N_{p}(\beta, \alpha^{2}I)$ and $A = \big[I - X(X'X)^{-1}X'\big]\dfrac{1}{\alpha^{2}}$
 Now,
 \begin{eqnarray*}
-A\sum = \dfrac{1}{\alpha^{2}}\big[I-X(X'X)^{-1}X'\big]^{2}I = I - X(X'X)^{-1}X'
+A\Sigma = \dfrac{1}{\alpha^{2}}\big[I-X(X'X)^{-1}X'\big]^{2}I = I - X(X'X)^{-1}X'
 \end{eqnarray*}
 \begin{eqnarray*}
  = \big[I-X(X'X)^{-1}X'\big]
 \end{eqnarray*}
 \begin{eqnarray*}
-A\sum A\sum  = \big[I-X(X'X)^{-1}X'\big]\big[I-X(X'X)^{-1}X'\big]
+A\Sigma A\Sigma  = \big[I-X(X'X)^{-1}X'\big]\big[I-X(X'X)^{-1}X'\big]
 \end{eqnarray*}
 \begin{eqnarray*}
 = I-X(X'X)^{-1}X'-X(X'X)^{-1}X' + X(X'X)^{-1}X'X
 \end{eqnarray*}
+\begin{eqnarray*}
+= I-X(X'X)^{-1}X'
+\end{eqnarray*}
+\begin{eqnarray*}
+ = A\Sigma
+\end{eqnarray*}
+that is, $A\Sigma$ is idempotent\\
+and rank 
+\begin{eqnarray*}
+A\Sigma = rank \big[I-X(X'X)^{-1}X' \big]
+\end{eqnarray*}
+\begin{eqnarray*}
+Thm 1.8.5 = trace \big[I-X(X'X)^{-1}X' \big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= trace(I)-trace\big[X(X'X)^{-1}X' \big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= n-trace\big[X(X'X)^{-1}X' \big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= n-trace\big[I_{p}\big] = n-p
+\end{eqnarray*}
 \end{theorem}
-
-
-
+\begin{theorem}
+\begin{eqnarray*}
+\Longrightarrow U \sim \chi_{n-p}^{2}, \lambda
+\end{eqnarray*}
+\begin{eqnarray*}
+\lambda = \dfrac{1}{2}(X\beta)'\dfrac{1}{a^{2}}\big[I-X(X'X)^{-1}X' \big](X\beta)
+\end{eqnarray*}
+\begin{eqnarray*}
+= \dfrac{1}{a^{2}}\big[\beta'X'X -\beta' X'(X'X)^{-1}X'X\beta\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= 0
+\end{eqnarray*}
+That is, indeed, $U \sim \chi_{n-p}^{2}$ (4) is proved.\\Further, as $\hat{\beta} = \underbrace{(X'X)^{-1}X'\underline{y}}_{\text{B}}$ is a linear form of \underline{y} while $\hat{a}^{2}$ is a quadratic form of \underline{y}, where $\underline{y} \sim N_{n}(X\underline{\beta}, a^{2}I$, $\hat{a}^{2} = \underline{y}\underbrace{\dfrac{1}{n-p}\big[I-X(X'X)^{-1}X' \big]\underline{y}}_{
+\text{A}}$ 
+\end{theorem}
+As 
+\begin{eqnarray*}
+B \Sigma A = (X'X)^{-1}X'\sum\dfrac{1}{n-p}\big[I-X(X'X)^{-1}X'\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+\dfrac{1}{n-p} = \big[(X'X)^{-1}X'-(X'X)^{-1}X'X(X'X)^{-1}X'\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= 0 \Longrightarrow \underline{\hat{\beta}} \Vert \hat{a}^{2}
+\end{eqnarray*}
+Lastly, we want to prove the suficiency and completeness of $\underline{\hat{\beta}}$ and $\hat{a}^{2}$\\
+Note again 
+\begin{eqnarray*}
+f_{\underline{Y}}(\underline{y};\underline{\beta}, a^{2}) =\dfrac{1}{\Big(\sqrt{2\pi a^{2}}\Big)^{n}} \exp\bigg\{-\dfrac{1}{2a^{2}}(\underline{Y}-X\beta)'(\underline{Y}-x\underline{\beta})\bigg\}
+\end{eqnarray*}
+where;
+\begin{eqnarray*}
+(\underline{Y}-X\underline{\beta})'(\underline{Y}-X\underline{\beta})
+\end{eqnarray*}
+\begin{eqnarray*}
+= \big[(\underline{Y}-X\underline{\hat{\beta}})+(X\hat{\beta}-X\underline{\beta})'\big] - \big[(\underline{Y}-X\underline{\hat{\beta}})+(X\hat{\beta}-X\underline{\beta})'\big]
+\end{eqnarray*}
+\begin{eqnarray*}
+= (\underline{Y}-X\underline{\hat{\beta}})'(\underline{Y}-X\underline{\hat{\beta}}) - (\underline{\beta} -\hat{\underline{\beta}}X')(\underline{Y}-X\underline{\hat{\beta}}) = 0
+\end{eqnarray*}
+\begin{eqnarray*}
+= (\underline{Y}-X\underline{\hat{\beta}})'X(\underline{\beta}-\hat{\underline{\beta}}) + (\underline{\beta}-\hat{\underline{\beta}})'X'X(\underline{\beta}-\hat{\underline{\beta}})
+\end{eqnarray*}
+\begin{eqnarray*}
+ = (\underline{Y}-X\underline{\hat{\beta}})'(\underline{Y}-X\underline{\hat{\beta}}) + (\underline{\beta}-\hat{\underline{\beta}})'X'X(\underline{\beta}-\hat{\underline{\beta}})
+\end{eqnarray*}
+\begin{eqnarray*}
+= n\hat{a}^{2} + \underline{\beta}'X'X\underline{\beta}-\underline{\hat{\beta'}}X'X\underline{\beta} - \underline{\beta}'X'X\underline{\hat{\beta}}+ \underline{\hat{\beta}}X'X\underline{\hat{\beta '}}
+\end{eqnarray*}
+\begin{eqnarray*}
+= n\hat{a}^{2} + \underline{\beta}'X'X\underline{\beta}-2\underline{\hat{\beta'}}X'X\underline{\beta} + \underline{Y}'\underline{Y} - n\hat{a}^{2}
+\end{eqnarray*}
+\begin{eqnarray*}
+ = \underline{Y}'\underline{Y} + \underline{\beta}'X'X\underline{\beta}-2\underline{\hat{\beta'}}X'X\underline{\beta}
+\end{eqnarray*}
+Then:
+\begin{eqnarray*}
+f_{\underline{Y}}(\underline{y};\underline{\beta}, a^{2}) =\Big(\dfrac{1}{\sqrt{2\pi a^{2}}}\Big)^{n} \exp\bigg\{-\dfrac{1}{2a^{2}}(\underline{Y}-X\beta)'(\underline{Y}
+\end{eqnarray*}
+\begin{eqnarray*}
+.
+\end{eqnarray*}
 \end{document}
